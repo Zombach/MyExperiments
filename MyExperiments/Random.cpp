@@ -27,8 +27,9 @@ auto Random::set_max(const int max) -> void
 	set_min_max(min_, max);
 }
 
-auto Random::set_min_max(const int min, const int max) -> void
+auto Random::set_min_max(const int min, int max) -> void
 {
+	if (min > max) { max = min; }
 	if (min_ != min) { min_ = min; }
 	if (max_ != max) { max_ = max; }
 	const uniform_int_distribution<std::mt19937_64::result_type> distribution(min_, max_);

@@ -10,7 +10,7 @@ public:
 	auto get_random(void) -> unsigned long long;
 	auto set_min(const int min) -> void;
 	auto set_max(const int max) -> void;
-	auto set_min_max(const int min, const int max) -> void;
+	auto set_min_max(const int min, int max) -> void;
 
 private:
 	unsigned long long min_;
