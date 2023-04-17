@@ -17,17 +17,17 @@ auto Random::get_random(void) -> unsigned long long
 	return distribution_(engine_);
 }
 
-auto Random::set_min(const int min) -> void
+auto Random::set_min(const unsigned long long min) -> void
 {
 	set_min_max(min, max_);
 }
 
-auto Random::set_max(const int max) -> void
+auto Random::set_max(const unsigned long long max) -> void
 {
 	set_min_max(min_, max);
 }
 
-auto Random::set_min_max(const int min, int max) -> void
+auto Random::set_min_max(const unsigned long long min, unsigned long long max) -> void
 {
 	if (min > max) { max = min; }
 	if (min_ != min) { min_ = min; }
