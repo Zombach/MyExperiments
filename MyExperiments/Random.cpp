@@ -1,8 +1,8 @@
-#include "Random.h"
+#include "random.h"
 
 using namespace std;
 
-Random::Random(const unsigned long long min, const unsigned long long max)
+random::random(const unsigned long long min, const unsigned long long max)
 	:min_(min), max_(max)
 {
 	random_device device;
@@ -12,22 +12,22 @@ Random::Random(const unsigned long long min, const unsigned long long max)
 	distribution_ = distribution;
 }
 
-auto Random::get_random(void) -> unsigned long long
+auto random::get_random(void) -> unsigned long long
 {
 	return distribution_(engine_);
 }
 
-auto Random::set_min(const unsigned long long min) -> void
+auto random::set_min(unsigned long long min) -> void
 {
 	set_min_max(min, max_);
 }
 
-auto Random::set_max(const unsigned long long max) -> void
+auto random::set_max(const unsigned long long max) -> void
 {
 	set_min_max(min_, max);
 }
 
-auto Random::set_min_max(const unsigned long long min, unsigned long long max) -> void
+auto random::set_min_max(const unsigned long long min, unsigned long long max) -> void
 {
 	if (min > max) { max = min; }
 	if (min_ != min) { min_ = min; }

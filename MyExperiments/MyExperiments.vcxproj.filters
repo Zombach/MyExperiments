@@ -18,12 +18,12 @@
     <ClCompile Include="MyExperiments.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Random.cpp">
+    <ClCompile Include="random.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Random.h">
+    <ClInclude Include="random.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
