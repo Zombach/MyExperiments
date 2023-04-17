@@ -129,11 +129,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="dictionary.cpp" />
     <ClCompile Include="file_manager.cpp" />
     <ClCompile Include="MyExperiments.cpp" />
     <ClCompile Include="random.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="dictionary.h" />
     <ClInclude Include="file_manager.h" />
     <ClInclude Include="random.h" />
   </ItemGroup>
