@@ -129,10 +129,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="file_manager.cpp" />
     <ClCompile Include="MyExperiments.cpp" />
     <ClCompile Include="random.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="file_manager.h" />
     <ClInclude Include="random.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
