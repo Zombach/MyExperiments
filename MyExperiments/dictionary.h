@@ -34,7 +34,6 @@ namespace zloo
 		if (!dictionary_->contains(key))
 		{
 			dictionary_->insert(std::make_pair(key, value));
-			//dictionary_[key].insert(value);
 			is_done = true;
 		}
 		return is_done;
