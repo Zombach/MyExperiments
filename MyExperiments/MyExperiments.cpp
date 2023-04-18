@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include "random.h"
+#include "rnd.h"
 #include <format>
 
 #include "dictionary.h"
