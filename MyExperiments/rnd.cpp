@@ -4,7 +4,6 @@ using namespace std;
 
 namespace zloo
 {
-
 	rnd::rnd(const unsigned long long min, const unsigned long long max)
 		:min_(min), max_(max)
 	{
