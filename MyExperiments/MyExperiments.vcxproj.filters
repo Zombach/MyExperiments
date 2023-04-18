@@ -18,7 +18,7 @@
     <ClCompile Include="MyExperiments.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="random.cpp">
+    <ClCompile Include="rnd.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="file_manager.cpp">
@@ -29,7 +29,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="random.h">
+    <ClInclude Include="rnd.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="file_manager.h">

@@ -132,12 +132,12 @@
     <ClCompile Include="dictionary.cpp" />
     <ClCompile Include="file_manager.cpp" />
     <ClCompile Include="MyExperiments.cpp" />
-    <ClCompile Include="random.cpp" />
+    <ClCompile Include="rnd.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dictionary.h" />
     <ClInclude Include="file_manager.h" />
-    <ClInclude Include="random.h" />
+    <ClInclude Include="rnd.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
