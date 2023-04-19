@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include "rnd.h"
 #include <format>
+#include <fstream>
 
 #include "dictionary.h"
 
@@ -9,8 +10,7 @@ using namespace std;
 
 int main()
 {
-	auto* dict = new zloo::dictionary<int, string>();
-
+	const auto dict = new zloo::dictionary<int, string>();
     bool is_add = dict->try_add(1, "fish");
     cout << is_add << endl;
     is_add = dict->try_add(1, "fish");
