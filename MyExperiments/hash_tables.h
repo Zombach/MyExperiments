@@ -2,6 +2,7 @@
 #include <string>
 
 #include "dictionary.h"
+#include "linked_node.h"
 
 namespace zloo
 {
@@ -12,6 +13,6 @@ namespace zloo
 
 		auto get_hash(const std::string& key) -> int;
 	private:
-		dictionary<int, int[]> dictionary_;
+		dictionary<int, linked_node<std::string>> dictionary_;
 	};
 };
