@@ -131,12 +131,16 @@
   <ItemGroup>
     <ClCompile Include="dictionary.cpp" />
     <ClCompile Include="file_manager.cpp" />
+    <ClCompile Include="hash_tables.cpp" />
+    <ClCompile Include="linked_node.cpp" />
     <ClCompile Include="MyExperiments.cpp" />
     <ClCompile Include="rnd.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dictionary.h" />
     <ClInclude Include="file_manager.h" />
+    <ClInclude Include="hash_tables.h" />
+    <ClInclude Include="linked_node.h" />
     <ClInclude Include="rnd.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
