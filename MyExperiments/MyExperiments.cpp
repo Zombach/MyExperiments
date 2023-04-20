@@ -15,10 +15,16 @@ int main()
 {
     auto node = new LinkedNode<int>(1);
     auto node2 = new LinkedNode<int>(2);
-    node->SetNode(node2);
+    auto node3 = new LinkedNode<int>(3);
+    auto node4 = new LinkedNode<int>(4);
+    node->AddNode(node2);
+    node2->AddNode(node3);
+    node3->AddNode(node4);
+    node->SwapNextNode(node3);
     int i = node->GetValue();
-    LinkedNode<int>::RemoveNode(node);
     LinkedNode<int>::RemoveNode(node2);
+    LinkedNode<int>::RemoveNode(node3);
+    LinkedNode<int>::RemoveNode(node);
 
 
     const auto hash = new HashTables();
