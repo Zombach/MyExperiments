@@ -30,14 +30,14 @@ int main()
 
 
 	const auto dict = new Dictionary<int, string>();
-    bool is_add = dict->try_add(1, "fish");
+    bool is_add = dict->TryAdd(1, "fish");
     cout << is_add << endl;
-    is_add = dict->try_add(1, "fish");
+    is_add = dict->TryAdd(1, "fish");
     cout << is_add << endl;
-    is_add = dict->try_add(2, "fish");
+    is_add = dict->TryAdd(2, "fish");
     cout << is_add << endl;
     string value;
-    bool is_get = dict->try_get_value(1,  value);
+    bool is_get = dict->TryGetValue(1,  value);
     
 
     /*const string stringFormat;
