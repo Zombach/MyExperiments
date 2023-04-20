@@ -10,8 +10,8 @@ namespace zloo
 		Dictionary();
 		~Dictionary();
 
-		auto try_add(T key, U value) -> bool;
-		auto try_get_value(T key, U& value) -> bool;
+		auto TryAdd(T key, U value) -> bool;
+		auto TryGetValue(T key, U& value) -> bool;
 	private:
 		std::map<T, U> *dictionary_;
 	};
@@ -29,7 +29,7 @@ namespace zloo
 	}
 
 	template <typename T, typename U>
-	auto Dictionary<T, U>::try_add(T key, U value) -> bool
+	auto Dictionary<T, U>::TryAdd(T key, U value) -> bool
 	{
 		bool is_done = false;
 		if (!dictionary_->contains(key))
@@ -41,7 +41,7 @@ namespace zloo
 	}
 
 	template <typename T, typename U>
-	auto Dictionary<T, U>::try_get_value(T key, U& value) -> bool
+	auto Dictionary<T, U>::TryGetValue(T key, U& value) -> bool
 	{
 		bool is_done = false;
 		if(dictionary_->contains(key))

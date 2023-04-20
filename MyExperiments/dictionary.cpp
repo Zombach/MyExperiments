@@ -14,7 +14,7 @@ namespace zloo
 	}*/
 
 	//template <typename T, typename U>
-	/*auto Dictionary<T, U>::try_add(T key, U value) -> bool
+	/*auto Dictionary<T, U>::TryAdd(T key, U value) -> bool
 	{
 		bool is_done = false;
 		if (!dictionary_.contains(key))
