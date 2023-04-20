@@ -10,7 +10,7 @@ namespace zloo
 		LinkedNode(T value, LinkedNode<T>* p_previous);
 				
 		auto SetNode(LinkedNode<T>* p_next) -> void;
-		auto RemoveNode() -> void;
+		auto static RemoveNode(LinkedNode<T>* current) -> LinkedNode<T>*;
 		auto GetValue() -> T;
 	private:
 		T value_;
@@ -42,34 +42,34 @@ namespace zloo
 	}
 
 	template <typename T>
-	auto LinkedNode<T>::RemoveNode() -> void
+	auto LinkedNode<T>::RemoveNode(LinkedNode<T>* current) -> LinkedNode<T>*
 	{
-		if (p_prev_ != nullptr)
+		if (current->p_prev_ != nullptr)
 		{
-			if (p_next_ != nullptr)
+			if (current->p_next_ != nullptr)
 			{
-				p_next_->p_prev_ = p_prev_;
-				p_prev_->p_next_ = p_next_;
+				current->p_next_->p_prev_ = current->p_prev_;
+				current->p_prev_->p_next_ = current->p_next_;
 			}
 			else
 			{
-				p_prev_->p_next_ = nullptr;
+				current->p_prev_->p_next_ = nullptr;
 			}
 		}
-		else if (p_next_ != nullptr)
+		else if (current->p_next_ != nullptr)
 		{
-			value_ = p_next_->value_;
-			p_next_ = p_next_->p_next_;
-			if (p_next_ != nullptr)
-			{
-				p_next_->p_prev_ = this;
-			}
-			return;
+			auto tmp = current->p_next_;
+			current->p_next_->p_prev_ = nullptr;
+			delete current;
+			current = nullptr;
+			return tmp;
 		}
 
-		p_next_ = nullptr;
-		p_prev_ = nullptr;
-		delete this;
+		current->p_next_ = nullptr;
+		current->p_prev_ = nullptr;
+		delete current;
+		current = nullptr;
+		return current;
 	}
 
 	template <typename T>

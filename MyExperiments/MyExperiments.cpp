@@ -13,9 +13,12 @@ using namespace zloo;
 
 int main()
 {
-    const auto node = new LinkedNode<int>(1);
-    string i = node->GetValue();
-    node->RemoveNode();
+    auto node = new LinkedNode<int>(1);
+    auto node2 = new LinkedNode<int>(2);
+    node->SetNode(node2);
+    int i = node->GetValue();
+    node2 = LinkedNode<int>::RemoveNode(node2);
+    node = LinkedNode<int>::RemoveNode(node);
 
 
     const auto hash = new HashTables();
