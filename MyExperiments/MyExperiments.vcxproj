@@ -129,19 +129,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="dictionary.cpp" />
-    <ClCompile Include="file_manager.cpp" />
-    <ClCompile Include="hash_tables.cpp" />
-    <ClCompile Include="linked_node.cpp" />
+    <ClCompile Include="Dictionary.cpp" />
+    <ClCompile Include="FileManager.cpp" />
+    <ClCompile Include="HashTables.cpp" />
+    <ClCompile Include="LinkedNode.cpp" />
     <ClCompile Include="MyExperiments.cpp" />
-    <ClCompile Include="rnd.cpp" />
+    <ClCompile Include="Rnd.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="dictionary.h" />
-    <ClInclude Include="file_manager.h" />
-    <ClInclude Include="hash_tables.h" />
-    <ClInclude Include="linked_node.h" />
-    <ClInclude Include="rnd.h" />
+    <ClInclude Include="Dictionary.h" />
+    <ClInclude Include="FileManager.h" />
+    <ClInclude Include="HashTables.h" />
+    <ClInclude Include="LinkedNode.h" />
+    <ClInclude Include="Rnd.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

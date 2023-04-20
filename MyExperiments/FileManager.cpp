@@ -1,10 +1,10 @@
-#include "file_manager.h"
+#include "FileManager.h"
 #include <fstream>
 #include <iostream>
 
 using namespace std;
 
-file_manager::file_manager(const std::string& file_path) : file_path_(file_path)
+FileManager::FileManager(const std::string& file_path) : file_path_(file_path)
 {
     try
     {
@@ -18,11 +18,11 @@ file_manager::file_manager(const std::string& file_path) : file_path_(file_path)
 }
 
 
-auto file_manager::destroy() -> bool
+auto FileManager::Destroy() -> bool
 {
     try
     {
-        // manager->~file_manager();
+        // manager->~FileManager();
         last_action = true;
     }
     catch (exception exception)
@@ -32,25 +32,25 @@ auto file_manager::destroy() -> bool
     return last_action;
 }
 
-file_manager::~file_manager() noexcept
+FileManager::~FileManager() noexcept
 {
     current_io_fs_->~basic_fstream();
 }
 
 
 /*
-auto file_manager::try_append(std::string data) -> bool
+auto FileManager::try_append(std::string data) -> bool
 {
 }
 */
 
-auto file_manager::is_open_io_fs() const -> bool
+auto FileManager::IsOpenIOFs() const -> bool
 {
     return current_io_fs_->is_open();
 }
 
 /*
-auto file_manager::set_file(std::string file_path) -> void
+auto FileManager::set_file(std::string file_path) -> void
 {
     file_path_(file_path);
 }
@@ -59,7 +59,7 @@ auto file_manager::set_file(std::string file_path) -> void
 
 
 
-auto file_manager::open() -> bool
+auto FileManager::Open() -> bool
 {
     try
     {
@@ -73,7 +73,7 @@ auto file_manager::open() -> bool
     return false;
 }
 
-auto file_manager::close() -> bool
+auto FileManager::Close() -> bool
 {
     if (current_io_fs_->is_open()) { current_io_fs_->close(); }
     return true;

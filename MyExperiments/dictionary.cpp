@@ -1,20 +1,20 @@
-#include "dictionary.h"
+#include "Dictionary.h"
 
 namespace zloo
 {
 	////template <typename  T, typename U>
-	//dictionary<T, U>::dictionary()
+	//Dictionary<T, U>::Dictionary()
 	//{
 	//	//dictionary_ = new map<T, U>();
 	//}
 
 	/*template <typename T, typename U>
-	dictionary<T, U>::~dictionary()
+	Dictionary<T, U>::~Dictionary()
 	{
 	}*/
 
 	//template <typename T, typename U>
-	/*auto dictionary<T, U>::try_add(T key, U value) -> bool
+	/*auto Dictionary<T, U>::try_add(T key, U value) -> bool
 	{
 		bool is_done = false;
 		if (!dictionary_.contains(key))

@@ -1,4 +1,4 @@
-#include "hash_tables.h"
+#include "HashTables.h"
 
 #include <iostream>
 
@@ -6,12 +6,12 @@ using namespace std;
 
 namespace zloo
 {
-	hash_tables::hash_tables()
+	HashTables::HashTables()
 	{
 		
 	}
 	
-	auto hash_tables::get_hash(const string& key) -> int
+	auto HashTables::GetHash(const string& key) -> int
 	{
 		int hash = 0;
 		const int length = static_cast<int>(key.length());

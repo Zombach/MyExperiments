@@ -1,14 +1,14 @@
-#include "linked_node.h"
+#include "LinkedNode.h"
 
 #include <string>
 
 namespace zloo
 {
-	template linked_node<int>;
-	template linked_node<std::string>;
+	template LinkedNode<int>;
+	template LinkedNode<std::string>;
 
 	template <typename T>
-	linked_node<T>::linked_node(T value)
+	LinkedNode<T>::LinkedNode(T value)
 	{
 		value_ = value;
 		p_next_ = nullptr;
@@ -16,7 +16,7 @@ namespace zloo
 	}
 
 	template <typename T>
-	linked_node<T>::linked_node(T value, linked_node* p_prev)
+	LinkedNode<T>::LinkedNode(T value, LinkedNode* p_prev)
 	{
 		value_ = value;
 		p_next_ = nullptr;
@@ -24,14 +24,14 @@ namespace zloo
 	}
 
 	template <typename T>
-	auto linked_node<T>::set_node(linked_node* p_next) -> void
+	auto LinkedNode<T>::SetNode(LinkedNode* p_next) -> void
 	{
 		p_next_ = p_next;
 		p_next->p_prev_ = this;
 	}
 
 	template <typename T>
-	auto linked_node<T>::remove_node() -> void
+	auto LinkedNode<T>::RemoveNode() -> void
 	{
 		if(p_prev_ != nullptr)
 		{
@@ -62,7 +62,7 @@ namespace zloo
 	}
 
 	template <typename T>
-	auto linked_node<T>::get_value() -> T
+	auto LinkedNode<T>::GetValue() -> T
 	{
 		return value_;
 	}		

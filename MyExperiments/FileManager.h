@@ -3,12 +3,12 @@
 #include <fstream>
 #include <map>
 
-class file_manager
+class FileManager
 {
 public:
-	explicit file_manager(const std::string& file_path);
-	static auto destroy() -> bool;
-	~file_manager() noexcept;
+	explicit FileManager(const std::string& file_path);
+	static auto Destroy() -> bool;
+	~FileManager() noexcept;
 	inline static bool last_action = false;
 
 
@@ -20,7 +20,7 @@ private:
 	std::map<std::string, std::fstream*> map_fs_;
 
 
-	auto is_open_io_fs() const -> bool;
-	auto open() -> bool;
-	auto close() -> bool;
+	auto IsOpenIOFs() const -> bool;
+	auto Open() -> bool;
+	auto Close() -> bool;
 };

@@ -1,10 +1,10 @@
-#include "rnd.h"
+#include "Rnd.h"
 
 using namespace std;
 
 namespace zloo
 {
-	rnd::rnd(const unsigned long long min, const unsigned long long max)
+	Rnd::Rnd(const unsigned long long min, const unsigned long long max)
 		:min_(min), max_(max)
 	{
 		random_device device;
@@ -14,22 +14,22 @@ namespace zloo
 		distribution_ = distribution;
 	}
 
-	auto rnd::get_random(void) -> unsigned long long
+	auto Rnd::GetRandom(void) -> unsigned long long
 	{
 		return distribution_(engine_);
 	}
 
-	auto rnd::set_min(unsigned long long min) -> void
+	auto Rnd::SetMin(unsigned long long min) -> void
 	{
-		set_min_max(min, max_);
+		SetMinMax(min, max_);
 	}
 
-	auto rnd::set_max(const unsigned long long max) -> void
+	auto Rnd::SetMax(const unsigned long long max) -> void
 	{
-		set_min_max(min_, max);
+		SetMinMax(min_, max);
 	}
 
-	auto rnd::set_min_max(const unsigned long long min, unsigned long long max) -> void
+	auto Rnd::SetMinMax(const unsigned long long min, unsigned long long max) -> void
 	{
 		if (min > max) { max = min; }
 		if (min_ != min) { min_ = min; }
