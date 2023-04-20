@@ -15,8 +15,7 @@ namespace zloo
 	private:
 		std::map<T, U> *dictionary_;
 	};
-
-
+	
 	template <typename T, typename U>
 	Dictionary<T, U>::Dictionary()
 	{

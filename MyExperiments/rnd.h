@@ -6,7 +6,7 @@ namespace zloo
 	class Rnd
 	{
 	public:
-		explicit Rnd(const unsigned long long min = 0, const unsigned long long max = 100);
+		Rnd(const unsigned long long min = 0, const unsigned long long max = 100);
 
 		auto GetRandom(void) -> unsigned long long;
 		auto SetMin(unsigned long long min) -> void;
