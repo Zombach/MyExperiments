@@ -10,7 +10,7 @@ namespace zloo
 		LinkedNode(T value, LinkedNode<T>* p_previous);
 				
 		auto SetNode(LinkedNode<T>* p_next) -> void;
-		auto static RemoveNode(LinkedNode<T>* current) -> LinkedNode<T>*;
+		auto static RemoveNode(LinkedNode<T>* &current) -> void;
 		auto GetValue() -> T;
 	private:
 		T value_;
@@ -42,7 +42,7 @@ namespace zloo
 	}
 
 	template <typename T>
-	auto LinkedNode<T>::RemoveNode(LinkedNode<T>* current) -> LinkedNode<T>*
+	auto LinkedNode<T>::RemoveNode(LinkedNode<T>* &current) -> void
 	{
 		if (current->p_prev_ != nullptr)
 		{
@@ -58,18 +58,16 @@ namespace zloo
 		}
 		else if (current->p_next_ != nullptr)
 		{
-			auto tmp = current->p_next_;
 			current->p_next_->p_prev_ = nullptr;
 			delete current;
 			current = nullptr;
-			return tmp;
+			return;
 		}
 
 		current->p_next_ = nullptr;
 		current->p_prev_ = nullptr;
 		delete current;
 		current = nullptr;
-		return current;
 	}
 
 	template <typename T>

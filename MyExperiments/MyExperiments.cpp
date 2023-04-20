@@ -17,8 +17,8 @@ int main()
     auto node2 = new LinkedNode<int>(2);
     node->SetNode(node2);
     int i = node->GetValue();
-    node2 = LinkedNode<int>::RemoveNode(node2);
-    node = LinkedNode<int>::RemoveNode(node);
+    LinkedNode<int>::RemoveNode(node);
+    LinkedNode<int>::RemoveNode(node2);
 
 
     const auto hash = new HashTables();
