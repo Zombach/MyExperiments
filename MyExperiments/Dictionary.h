@@ -48,7 +48,7 @@ namespace zloo
 		//Если элементы есть, то обходим все главные ноды и сравниваем хеш
 		else
 		{
-			LinkedNode<int, LinkedNode<T, U>>* p_current = head_;
+			auto p_current = head_;
 			while (true)
 			{
 				if (p_current->GetKey() != hash)
@@ -107,21 +107,38 @@ namespace zloo
 				}
 			}			
 		}
-
-
-
 		return is_done;
 	}
 
 	template <typename T, typename U>
 	auto Dictionary<T, U>::TryGetValue(T key, U& value) -> bool
 	{
-		bool is_done = false;
-		/*if(dictionary_->contains(key))
-		{ 
-			value = dictionary_->at(key);
-			is_done = true;
-		}*/
-		return is_done;
+		int hash = hash_->GetHash(key);
+		auto p_current = head_;
+		while (p_current != nullptr)
+		{
+			if (p_current->GetKey() != hash || p_current->GetValue() == nullptr)
+			{
+				p_current = p_current->GetNext();
+			}
+			else
+			{
+				auto p_node = p_current->GetValue();
+				while (p_node != nullptr)
+				{
+					if (p_node->GetKey() != key)
+					{
+						p_node = p_node->GetNext();
+					}
+					else
+					{
+						value = *p_node->GetValue();
+						return true;
+					}
+				}
+				return false;
+			}
+		}
+		return false;
 	}
 };

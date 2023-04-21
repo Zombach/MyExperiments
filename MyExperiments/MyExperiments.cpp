@@ -23,7 +23,9 @@ int main()
     cout << is_add << endl;
     string value;
     bool is_get = dict->TryGetValue("1", value);
-    
+    cout << is_add << endl;
+    is_get = dict->TryGetValue("21", value);
+    cout << is_add << endl;
 
     int i = 1;
     auto node = new LinkedNode<int, int>(i);
