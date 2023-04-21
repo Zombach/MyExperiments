@@ -14,7 +14,7 @@ using namespace zloo;
 int main()
 {
     string fish = "fish";
-    const auto dict = new Dictionary<string, string>();
+    auto dict = new Dictionary<string, string>();
     bool is_add = dict->TryAdd("1", &fish);
     cout << is_add << endl;
     is_add = dict->TryAdd("21", &fish);
@@ -26,6 +26,8 @@ int main()
     cout << is_add << endl;
     is_get = dict->TryGetValue("21", value);
     cout << is_add << endl;
+    auto g1 = *dict->operator[]("2");
+    auto g2 = *(*dict)["2"];
 
     int i = 1;
     auto node = new LinkedNode<int, int>(i);

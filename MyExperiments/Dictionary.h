@@ -2,6 +2,7 @@
 #include <map>
 #include "LinkedNode.h"
 #include "Hash.h"
+#include <iostream>
 
 namespace zloo
 {
@@ -11,6 +12,8 @@ namespace zloo
 	public:
 		Dictionary();
 		~Dictionary();
+
+		auto operator[](T key) -> U*;
 
 		auto TryAdd(T key, U *value) -> bool;
 		auto TryGetValue(T key, U& value) -> bool;
@@ -31,6 +34,14 @@ namespace zloo
 	{
 		delete head_;
 		head_ = nullptr;
+	}
+
+	template<typename T, typename U>
+	auto Dictionary<T, U>::operator[](T key) -> U*
+	{
+		U* value = new U();
+		bool is_done = TryGetValue(key, *value);
+		return value;
 	}
 
 	template <typename T, typename U>
