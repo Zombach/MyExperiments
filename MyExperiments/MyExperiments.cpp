@@ -43,10 +43,10 @@ int main()
     
 
     const string stringFormat;
-    const auto Rnd = new zloo::Rnd();
-    unsigned long long digital = Rnd->GetRandom();
+    const auto rnd = new Rnd();
+    unsigned long long digital = rnd->GetRandom();
     cout << digital << endl;
-    Rnd->SetMinMax(100, 1000);
-    digital = Rnd->GetRandom();
+    rnd->SetMinMax(100, 1000);
+    digital = rnd->GetRandom();
     cout << digital << endl;
 }
