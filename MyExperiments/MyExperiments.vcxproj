@@ -131,7 +131,7 @@
   <ItemGroup>
     <ClCompile Include="Dictionary.cpp" />
     <ClCompile Include="FileManager.cpp" />
-    <ClCompile Include="HashTables.cpp" />
+    <ClCompile Include="Hash.cpp" />
     <ClCompile Include="LinkedNode.cpp" />
     <ClCompile Include="MyExperiments.cpp" />
     <ClCompile Include="Rnd.cpp" />
@@ -139,7 +139,7 @@
   <ItemGroup>
     <ClInclude Include="Dictionary.h" />
     <ClInclude Include="FileManager.h" />
-    <ClInclude Include="HashTables.h" />
+    <ClInclude Include="Hash.h" />
     <ClInclude Include="LinkedNode.h" />
     <ClInclude Include="Rnd.h" />
   </ItemGroup>
