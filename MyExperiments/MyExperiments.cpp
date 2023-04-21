@@ -20,9 +20,9 @@ int main()
     node->AddNode(node2);
     node2->AddNode(node3);
     node3->AddNode(node4);
-    node->SwapNextNode(node3);
+    auto p_forDelete = node->SwapNextNode(node3);
     int i = node->GetValue();
-    LinkedNode<int>::RemoveNode(node2);
+    LinkedNode<int>::RemoveNode(p_forDelete);
     LinkedNode<int>::RemoveNode(node3);
     LinkedNode<int>::RemoveNode(node);
 
