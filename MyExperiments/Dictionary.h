@@ -13,10 +13,11 @@ namespace zloo
 		Dictionary();
 		~Dictionary();
 
-		auto operator[](T& key) -> U&;
+		auto operator[](const T& r_key) -> U&;
 
 		auto TryAdd(T key, U *value) -> bool;
 		auto TryGetValue(T key, U& value) -> bool;
+		auto TryRemoveByKey(T key) -> bool;
 	private:
 		LinkedNode<int, LinkedNode<T, U>> *head_;
 		Hash<T> *hash_;
@@ -37,10 +38,10 @@ namespace zloo
 	}
 
 	template<typename T, typename U>
-	auto Dictionary<T, U>::operator[](T& key) -> U&
+	auto Dictionary<T, U>::operator[](const T& r_key) -> U&
 	{
 		U* u = new U();
-		bool is_done = TryGetValue(key, *u);
+		bool is_done = TryGetValue(r_key, *u);
 		return *u;
 	}
 
@@ -151,5 +152,11 @@ namespace zloo
 			}
 		}
 		return false;
+	}
+
+	template <typename T, typename U>
+	auto Dictionary<T, U>::TryRemoveByKey(T key) -> bool
+	{
+
 	}
 };
