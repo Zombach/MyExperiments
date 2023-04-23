@@ -16,7 +16,7 @@ int main()
     string fish = "fish";
     auto dict = new Dictionary<string, string>();
     bool is_add = dict->TryAdd("1", &fish);
-    cout << is_add << endl;
+   /* cout << is_add << endl;
     is_add = dict->TryAdd("21", &fish);
     cout << is_add << endl;
     is_add = dict->TryAdd("2", &fish);
@@ -26,8 +26,12 @@ int main()
     cout << is_add << endl;
     is_get = dict->TryGetValue("21", value);
     cout << is_add << endl;
-    auto g1 = *dict->operator[]("2");
-    auto g2 = *(*dict)["2"];
+    auto g1 = dict->operator[]("2");
+    */
+    
+    string kkk = "1";
+    auto h = dict->operator[](kkk);
+    dict->operator=(kkk);
 
     int i = 1;
     auto node = new LinkedNode<int, int>(i);

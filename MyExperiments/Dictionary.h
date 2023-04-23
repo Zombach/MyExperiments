@@ -13,7 +13,7 @@ namespace zloo
 		Dictionary();
 		~Dictionary();
 
-		auto operator[](T key) -> U*;
+		auto operator[](T& key) -> U&;
 
 		auto TryAdd(T key, U *value) -> bool;
 		auto TryGetValue(T key, U& value) -> bool;
@@ -37,11 +37,11 @@ namespace zloo
 	}
 
 	template<typename T, typename U>
-	auto Dictionary<T, U>::operator[](T key) -> U*
+	auto Dictionary<T, U>::operator[](T& key) -> U&
 	{
-		U* value = new U();
-		bool is_done = TryGetValue(key, *value);
-		return value;
+		U* u = new U();
+		bool is_done = TryGetValue(key, *u);
+		return *u;
 	}
 
 	template <typename T, typename U>
