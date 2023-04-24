@@ -157,6 +157,55 @@ namespace zloo
 	template <typename T, typename U>
 	auto Dictionary<T, U>::TryRemoveByKey(T key) -> bool
 	{
+		bool isDone = false;
+		int hash = hash_->GetHash(key);
+		auto current = head_;
+		while(current != nullptr)
+		{
+			if(current->GetKey() != hash) { current = current->GetNext(); }
+			else
+			{
+				if(current->GetValue() != nullptr)
+				{
+					auto node = current->GetValue();
+					if(node->GetNext() == nullptr)
+					{
+						//удалить эту ноду и главную ноду
+						if(node->GetKey() == key)
+						{
+							
+						}
+						//Нет ноды с данным ключем
+						else { return false; }
+					}
 
+
+					while(node != nullptr)
+					{
+						if(node->GetKey() != key) { node = node->GetNext(); }
+						else
+						{
+							if(node->GetNext() == nullptr)
+							{
+								node->GetPrev()->SetNext(nullptr);
+							}
+							else
+							{
+								node->GetNext()->GetPrev() = node->GetPrev();
+								node->GetPrev()->GetNext() = node->GetNext();
+							}
+							delete node;
+							isDone = true;
+						}
+					}
+				}
+				else
+				{
+					//Удалить ноду, если есть за нодой другие, то перепривезать их
+				}
+			}
+		}
+
+		return isDone;
 	}
 };
