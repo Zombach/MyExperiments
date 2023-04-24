@@ -168,18 +168,15 @@ namespace zloo
 				if(current->GetValue() != nullptr)
 				{
 					auto node = current->GetValue();
-					if(node->GetNext() == nullptr)
+					if(node->GetKey() == key)
 					{
-						//удалить эту ноду и главную ноду
-						if(node->GetKey() == key)
-						{
-							
-						}
-						//Нет ноды с данным ключем
-						else { return false; }
+						//удалить эту ноду и проверить есть ли ещё ноды и если нет,
+						//то удалить главную ноду
+						delete node;
+						return true;
 					}
 
-
+					node = node->GetNext();
 					while(node != nullptr)
 					{
 						if(node->GetKey() != key) { node = node->GetNext(); }
@@ -195,7 +192,7 @@ namespace zloo
 								node->GetPrev()->GetNext() = node->GetNext();
 							}
 							delete node;
-							isDone = true;
+							return true;
 						}
 					}
 				}
